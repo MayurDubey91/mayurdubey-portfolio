@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mayur Dubey — Front-end developer</title>
-  <meta name="description" content="Mayur Dubey is a front-end developer in Indore with 9+ years building websites and product interfaces in HTML, CSS, JavaScript, and React." />
+  <title>Mayur Dubey — Lead User Interface Engineer</title>
+  <meta name="description" content="Mayur Dubey is Lead User Interface Engineer at LiveRetail. He builds SaaS interfaces and mobile apps for brands including Honda America, Century 21, and Northwestern Mutual." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@340;460;560&display=swap" rel="stylesheet" />
@@ -36,17 +36,22 @@
       position: sticky; top: 0; z-index: 5;
       backdrop-filter: blur(12px);
       background: rgba(246, 241, 232, 0.86);
-      border-bottom: 1px solid transparent;
     }
-    .nav {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 16px 0;
-    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
     .mark { font-weight: 560; letter-spacing: -0.03em; text-decoration: none; }
     .nav nav { display: flex; gap: 22px; }
     .nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
     .nav a:hover { color: var(--ink); }
-    .hero { padding: 72px 0 40px; }
+    .hero { padding: 56px 0 28px; display: grid; grid-template-columns: 1.4fr 0.7fr; gap: 36px; align-items: center; }
+    .portrait {
+      width: min(280px, 100%);
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      justify-self: end;
+      background: #fff;
+    }
     .eyebrow {
       display: inline-flex; gap: 8px; align-items: center;
       color: var(--accent); font-size: 0.82rem; letter-spacing: 0.14em;
@@ -55,13 +60,13 @@
     h1 {
       font-family: "Instrument Serif", Georgia, serif;
       font-weight: 400;
-      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      font-size: clamp(3rem, 7vw, 5.4rem);
       line-height: 0.92;
       letter-spacing: -0.035em;
       margin: 14px 0 18px;
     }
     h1 em { font-style: italic; color: var(--accent); }
-    .lede { max-width: 640px; font-size: 1.18rem; color: var(--muted); margin: 0 0 28px; }
+    .lede { max-width: 640px; font-size: 1.15rem; color: var(--muted); margin: 0 0 28px; }
     .row { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -73,12 +78,12 @@
     .stats {
       display: grid; grid-template-columns: repeat(3, 1fr);
       gap: 1px; background: var(--line); border: 1px solid var(--line);
-      border-radius: 18px; overflow: hidden; margin: 48px 0 10px;
+      border-radius: 18px; overflow: hidden; margin: 36px 0 10px;
     }
     .stats div { background: var(--card); padding: 22px 20px; }
     .stats strong {
       display: block; font-family: "Instrument Serif", Georgia, serif;
-      font-size: 1.8rem; font-weight: 400;
+      font-size: 1.6rem; font-weight: 400;
     }
     .stats span { color: var(--muted); font-size: 0.92rem; }
     section { padding: 56px 0; }
@@ -87,19 +92,11 @@
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400; letter-spacing: -0.03em; margin: 0 0 8px;
     }
-    .sub { color: var(--muted); margin: 0 0 28px; max-width: 560px; }
-    .about {
-      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px;
-    }
-    .panel {
-      background: var(--card); border: 1px solid var(--line);
-      border-radius: 18px; padding: 24px;
-    }
+    .sub { color: var(--muted); margin: 0 0 28px; max-width: 620px; }
+    .about { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; }
+    .panel { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
     .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .chips span {
-      background: var(--accent-soft); color: #7a3418;
-      border-radius: 999px; padding: 6px 10px; font-size: 0.88rem;
-    }
+    .chips span { background: var(--accent-soft); color: #7a3418; border-radius: 999px; padding: 6px 10px; font-size: 0.88rem; }
     .timeline { display: grid; gap: 14px; }
     .job { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
     .job time { color: var(--muted); font-size: 0.92rem; }
@@ -109,7 +106,6 @@
     .card {
       background: var(--card); border: 1px solid var(--line);
       border-radius: 18px; padding: 22px; min-height: 160px;
-      display: flex; flex-direction: column; justify-content: space-between;
     }
     .card h3 { margin: 8px 0; font-size: 1.25rem; letter-spacing: -0.02em; }
     .card p { margin: 0; color: var(--muted); }
@@ -129,9 +125,10 @@
     footer a:hover { color: var(--ink); }
     @media (max-width: 760px) {
       .nav nav { display: none; }
-      .about, .work, .contact, .stats { grid-template-columns: 1fr; }
+      .hero, .about, .work, .contact, .stats { grid-template-columns: 1fr; }
+      .portrait { justify-self: start; width: 180px; }
       .job { grid-template-columns: 1fr; gap: 4px; }
-      .hero { padding-top: 40px; }
+      .hero { padding-top: 32px; }
     }
   </style>
 </head>
@@ -150,17 +147,23 @@
 
   <main id="top">
     <div class="wrap hero">
-      <div class="eyebrow">Indore · Front-end</div>
-      <h1>Interfaces with<br />a steady <em>hand.</em></h1>
-      <p class="lede">I design and build websites and product interfaces. Nine-plus years across HTML, CSS, and JavaScript, with React, Node, and enough back-end to ship with a team.</p>
-      <div class="row">
-        <a class="btn primary" href="#work">See the work</a>
-        <a class="btn ghost" href="mailto:mayur.dubey91@gmail.com">mayur.dubey91@gmail.com</a>
+      <div>
+        <div class="eyebrow">Indore · LiveRetail</div>
+        <h1>Lead user<br />interface <em>engineer.</em></h1>
+        <p class="lede">I build the interfaces of SaaS platforms and the mobile apps that sit on them. Six years with the LiveTechnology group, shipping UI for Honda America, Century 21, Northwestern Mutual, and the CreativeMatrix in LiveRetail.</p>
+        <div class="row">
+          <a class="btn primary" href="#work">See the work</a>
+          <a class="btn ghost" href="mailto:mayur.dubey91@gmail.com">mayur.dubey91@gmail.com</a>
+        </div>
       </div>
+      <img class="portrait" src="mayur.jpg" alt="Mayur Dubey" />
+    </div>
+
+    <div class="wrap">
       <div class="stats">
-        <div><strong>9+</strong><span>years building for the web</span></div>
-        <div><strong>Lead</strong><span>teams of 15–20 people</span></div>
-        <div><strong>Now</strong><span>building at LiveRetail</span></div>
+        <div><strong>Lead UI</strong><span>engineer at LiveRetail</span></div>
+        <div><strong>6 years</strong><span>with the LiveTechnology group</span></div>
+        <div><strong>iOS + Android</strong><span>apps on a shared platform</span></div>
       </div>
     </div>
 
@@ -168,18 +171,19 @@
       <div class="wrap about">
         <div class="panel">
           <h2>About</h2>
-          <p>I’m Mayur Dubey, a front-end developer based in Indore. Most of my time has gone into HTML, CSS, and JavaScript, with working knowledge of React.js, Node.js, and the basics of the back end.</p>
-          <p>I have worked as a developer, a team lead, and a delivery manager. The through-line is the same: get a product in front of people, and keep the interface honest.</p>
-          <p>I hold a bachelor’s in Electronics and Communication, and trained on Oracle and web technologies before moving into product work.</p>
+          <p>I’m Mayur Dubey, Lead User Interface Engineer at LiveRetail. The public team page credits the CreativeMatrix interface, and the iPhone and Android apps released for enterprises on a common platform, to this stretch of work.</p>
+          <p>Before that I worked as a developer, team lead, and delivery manager. I started at Ignatiuz Technologies in 2014 as a junior web developer, later leading a team of about 15–20, with CMS work for LiveTechnology. A short spell at Publicis Sapient on Salesforce followed, then LiveRetail.</p>
+          <p>I hold a bachelor’s in Electronics and Communication, and trained on Oracle and web technologies before the first IT role.</p>
         </div>
         <div class="panel">
           <h2 style="font-size:1.8rem">Stack</h2>
           <div class="chips">
             <span>HTML</span><span>CSS</span><span>JavaScript</span>
             <span>React</span><span>Node.js</span><span>CMS</span>
-            <span>Electron</span><span>Salesforce</span>
+            <span>Electron</span><span>iOS</span><span>Android</span>
           </div>
           <p class="sub" style="margin-top:22px">Rangwasa, Indore, Madhya Pradesh</p>
+          <p><a href="https://www.linkedin.com/in/mayur-dubey-6bb7109b/">LinkedIn</a></p>
         </div>
       </div>
     </section>
@@ -187,25 +191,37 @@
     <section id="work">
       <div class="wrap">
         <h2>Selected work</h2>
-        <p class="sub">Titles carried over from the current portfolio. Descriptions stay close to what is public; case-study detail can be filled in later.</p>
+        <p class="sub">Brand work named on the LiveRetail team page, plus products from the existing portfolio.</p>
         <div class="work">
           <article class="card">
-            <div><div class="tag">Product</div><h3>LiveRetail</h3><p>Retail product work, including the desktop app used by the LiveRetail team.</p></div>
+            <div class="tag">LiveRetail</div>
+            <h3>CreativeMatrix</h3>
+            <p>The CreativeMatrix interface of LiveRetail, used to create and customize on-brand local ads at scale.</p>
           </article>
           <article class="card">
-            <div><div class="tag">Platform</div><h3>LivePlatform</h3><p>CMS and website platform work during a long stretch with LiveTechnology.</p></div>
+            <div class="tag">Enterprise SaaS</div>
+            <h3>Honda America</h3>
+            <p>User interface for a SaaS platform used by Honda America, built inside the LiveTechnology group.</p>
           </article>
           <article class="card">
-            <div><div class="tag">Mobile</div><h3>LiveStuff</h3><p>Companion product on the LiveStuff side, including the mobile app.</p></div>
+            <div class="tag">Enterprise SaaS</div>
+            <h3>Century 21</h3>
+            <p>Interface work on the Century 21 platform, alongside other multi-location brand systems.</p>
           </article>
           <article class="card">
-            <div><div class="tag">Series</div><h3>Creative Series</h3><p>A creative project from the existing portfolio. Ready for a proper write-up.</p></div>
+            <div class="tag">Enterprise SaaS</div>
+            <h3>Northwestern Mutual</h3>
+            <p>SaaS interface for Northwestern Mutual, part of the same brand platform work.</p>
           </article>
           <article class="card">
-            <div><div class="tag">Campaign</div><h3>Take Five Give Five</h3><p>Listed on the current site. Outcome and role still to be written in.</p></div>
+            <div class="tag">Mobile</div>
+            <h3>iPhone and Android apps</h3>
+            <p>Enterprise apps released on a common platform, covering both iOS and Android.</p>
           </article>
           <article class="card">
-            <div><div class="tag">Tool</div><h3>Creative Matrix</h3><p>Listed on the current site. Screens and a short story can replace this card.</p></div>
+            <div class="tag">Platform</div>
+            <h3>LivePlatform and LiveStuff</h3>
+            <p>CMS and website platform work, plus the LiveStuff product and mobile app.</p>
           </article>
         </div>
       </div>
@@ -214,31 +230,31 @@
     <section id="path">
       <div class="wrap">
         <h2>Path</h2>
-        <p class="sub">From the About page on mayurdubey.com. Dates are approximate where the original copy was not specific.</p>
+        <p class="sub">Current role from the LiveRetail team page. Earlier roles from the About page on mayurdubey.com. LinkedIn itself is login-walled, so dates there could not be checked.</p>
         <div class="timeline">
           <div class="job">
             <time>Present</time>
             <div>
-              <h3>LiveRetail</h3>
-              <p>Building with the LiveRetail team after a short stretch that was not the right fit.</p>
+              <h3>Lead User Interface Engineer, LiveRetail</h3>
+              <p>Six years with the LiveTechnology group. UI for Honda America, Century 21, Northwestern Mutual, and the CreativeMatrix interface.</p>
             </div>
           </div>
           <div class="job">
             <time>Interim</time>
             <div>
               <h3>Publicis Sapient</h3>
-              <p>Worked on Salesforce. Left when the work did not match what he wanted to build.</p>
+              <p>Salesforce work. Left when it was not the fit he was looking for, then joined LiveRetail.</p>
             </div>
           </div>
           <div class="job">
             <time>2014 — about 7 years</time>
             <div>
               <h3>Ignatiuz Technologies</h3>
-              <p>Joined as a junior web developer, later team lead for a group of about 15–20 people. CMS work for LiveTechnology.</p>
+              <p>Joined as a junior web developer, later team lead for about 15–20 people. CMS work for LiveTechnology.</p>
             </div>
           </div>
           <div class="job">
-            <time>2008 / 2012</time>
+            <time>Engineering</time>
             <div>
               <h3>Electronics & Communication</h3>
               <p>Bachelor’s in engineering, plus Oracle and web-technology training, before the first IT role in 2014.</p>
