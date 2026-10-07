@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mayur Dubey — Front-end developer</title>
+  <meta name="description" content="Mayur Dubey is a front-end developer in Indore with 9+ years building websites and product interfaces in HTML, CSS, JavaScript, and React." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@340;460;560&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #161410;
+      --muted: #5c564c;
+      --line: #e4ddd2;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --accent: #b4532a;
+      --accent-soft: #f3e2d6;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(900px 420px at 90% -10%, #f3e2d6 0%, transparent 60%),
+        var(--paper);
+      font-family: Outfit, system-ui, sans-serif;
+      font-weight: 340;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      backdrop-filter: blur(12px);
+      background: rgba(246, 241, 232, 0.86);
+      border-bottom: 1px solid transparent;
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0;
+    }
+    .mark { font-weight: 560; letter-spacing: -0.03em; text-decoration: none; }
+    .nav nav { display: flex; gap: 22px; }
+    .nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+    .nav a:hover { color: var(--ink); }
+    .hero { padding: 72px 0 40px; }
+    .eyebrow {
+      display: inline-flex; gap: 8px; align-items: center;
+      color: var(--accent); font-size: 0.82rem; letter-spacing: 0.14em;
+      text-transform: uppercase; font-weight: 560;
+    }
+    h1 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(3.2rem, 8vw, 6.4rem);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      margin: 14px 0 18px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .lede { max-width: 640px; font-size: 1.18rem; color: var(--muted); margin: 0 0 28px; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      text-decoration: none; border-radius: 999px; padding: 12px 18px;
+      font-weight: 560;
+    }
+    .btn.primary { background: var(--ink); color: #f6f1e8; }
+    .btn.ghost { border: 1px solid var(--line); background: var(--card); }
+    .stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--line); border: 1px solid var(--line);
+      border-radius: 18px; overflow: hidden; margin: 48px 0 10px;
+    }
+    .stats div { background: var(--card); padding: 22px 20px; }
+    .stats strong {
+      display: block; font-family: "Instrument Serif", Georgia, serif;
+      font-size: 1.8rem; font-weight: 400;
+    }
+    .stats span { color: var(--muted); font-size: 0.92rem; }
+    section { padding: 56px 0; }
+    h2 {
+      font-family: "Instrument Serif", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; letter-spacing: -0.03em; margin: 0 0 8px;
+    }
+    .sub { color: var(--muted); margin: 0 0 28px; max-width: 560px; }
+    .about {
+      display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px;
+    }
+    .panel {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 24px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .chips span {
+      background: var(--accent-soft); color: #7a3418;
+      border-radius: 999px; padding: 6px 10px; font-size: 0.88rem;
+    }
+    .timeline { display: grid; gap: 14px; }
+    .job { display: grid; grid-template-columns: 180px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
+    .job time { color: var(--muted); font-size: 0.92rem; }
+    .job h3 { margin: 0 0 4px; font-size: 1.05rem; font-weight: 560; }
+    .job p { margin: 0; color: var(--muted); }
+    .work { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; padding: 22px; min-height: 160px;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .card h3 { margin: 8px 0; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .card p { margin: 0; color: var(--muted); }
+    .tag { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); font-weight: 560; }
+    .contact {
+      background: var(--ink); color: #f6f1e8;
+      border-radius: 24px; padding: 36px;
+      display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 20px;
+    }
+    .contact h2 { color: #fff; }
+    .contact p { color: #cfc6ba; }
+    .contact a { color: #f3e2d6; }
+    footer { padding: 28px 0 40px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 0.92rem; }
+    @media (max-width: 760px) {
+      .nav nav { display: none; }
+      .about, .work, .contact, .stats { grid-template-columns: 1fr; }
+      .job { grid-template-columns: 1fr; gap: 4px; }
+      .hero { padding-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="mark" href="#top">Mayur Dubey</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#path">Path</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="wrap hero">
+      <div class="eyebrow">Indore · Front-end</div>
+      <h1>Interfaces with<br />a steady <em>hand.</em></h1>
+      <p class="lede">I design and build websites and product interfaces. Nine-plus years across HTML, CSS, and JavaScript, with React, Node, and enough back-end to ship with a team.</p>
+      <div class="row">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn ghost" href="mailto:mayur.dubey91@gmail.com">mayur.dubey91@gmail.com</a>
+      </div>
+      <div class="stats">
+        <div><strong>9+</strong><span>years building for the web</span></div>
+        <div><strong>Lead</strong><span>teams of 15–20 people</span></div>
+        <div><strong>Now</strong><span>building at LiveRetail</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap about">
+        <div class="panel">
+          <h2>About</h2>
+          <p>I’m Mayur Dubey, a front-end developer based in Indore. Most of my time has gone into HTML, CSS, and JavaScript, with working knowledge of React.js, Node.js, and the basics of the back end.</p>
+          <p>I have worked as a developer, a team lead, and a delivery manager. The through-line is the same: get a product in front of people, and keep the interface honest.</p>
+          <p>I hold a bachelor’s in Electronics and Communication, and trained on Oracle and web technologies before moving into product work.</p>
+        </div>
+        <div class="panel">
+          <h2 style="font-size:1.8rem">Stack</h2>
+          <div class="chips">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>React</span><span>Node.js</span><span>CMS</span>
+            <span>Electron</span><span>Salesforce</span>
+          </div>
+          <p class="sub" style="margin-top:22px">Rangwasa, Indore, Madhya Pradesh</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <h2>Selected work</h2>
+        <p class="sub">Titles carried over from the current portfolio. Descriptions stay close to what is public; case-study detail can be filled in later.</p>
+        <div class="work">
+          <article class="card">
+            <div><div class="tag">Product</div><h3>LiveRetail</h3><p>Retail product work, including the desktop app used by the LiveRetail team.</p></div>
+          </article>
+          <article class="card">
+            <div><div class="tag">Platform</div><h3>LivePlatform</h3><p>CMS and website platform work during a long stretch with LiveTechnology.</p></div>
+          </article>
+          <article class="card">
+            <div><div class="tag">Mobile</div><h3>LiveStuff</h3><p>Companion product on the LiveStuff side, including the mobile app.</p></div>
+          </article>
+          <article class="card">
+            <div><div class="tag">Series</div><h3>Creative Series</h3><p>A creative project from the existing portfolio. Ready for a proper write-up.</p></div>
+          </article>
+          <article class="card">
+            <div><div class="tag">Campaign</div><h3>Take Five Give Five</h3><p>Listed on the current site. Outcome and role still to be written in.</p></div>
+          </article>
+          <article class="card">
+            <div><div class="tag">Tool</div><h3>Creative Matrix</h3><p>Listed on the current site. Screens and a short story can replace this card.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="path">
+      <div class="wrap">
+        <h2>Path</h2>
+        <p class="sub">From the About page on mayurdubey.com. Dates are approximate where the original copy was not specific.</p>
+        <div class="timeline">
+          <div class="job">
+            <time>Present</time>
+            <div>
+              <h3>LiveRetail</h3>
+              <p>Building with the LiveRetail team after a short stretch that was not the right fit.</p>
+            </div>
+          </div>
+          <div class="job">
+            <time>Interim</time>
+            <div>
+              <h3>Publicis Sapient</h3>
+              <p>Worked on Salesforce. Left when the work did not match what he wanted to build.</p>
+            </div>
+          </div>
+          <div class="job">
+            <time>2014 — about 7 years</time>
+            <div>
+              <h3>Ignatiuz Technologies</h3>
+              <p>Joined as a junior web developer, later team lead for a group of about 15–20 people. CMS work for LiveTechnology.</p>
+            </div>
+          </div>
+          <div class="job">
+            <time>2008 / 2012</time>
+            <div>
+              <h3>Electronics &amp; Communication</h3>
+              <p>Bachelor’s in engineering, plus Oracle and web-technology training, before the first IT role in 2014.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <h2>Say hello.</h2>
+            <p>Questions, roles, or a product that needs a calmer interface. Email is the fastest way.</p>
+          </div>
+          <div>
+            <p><a href="mailto:mayur.dubey91@gmail.com">mayur.dubey91@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/mayur-dubey-6bb7109b/">LinkedIn</a></p>
+            <p><a href="https://github.com/MayurDubey91">GitHub</a></p>
+            <p>Rangwasa, Indore, Madhya Pradesh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© 2026 Mayur Dubey</span>
+    <span>Redesign of mayurdubey.com</span>
+  </footer>
+</body>
+</html>
